@@ -11,8 +11,10 @@ addons:
     - nodejs-legacy
 stages:
   - test
+before_install:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
 install:
-  - pip install awscli
   - npm install
 jobs:
   include:
