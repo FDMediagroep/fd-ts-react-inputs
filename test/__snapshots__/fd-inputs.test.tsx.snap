@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FD Input should render correctly 1`] = `
+<Input
+  id="input"
+  localStorage={true}
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa hANgQL"
+    >
+      <div
+        className="input"
+      >
+        <input
+          className="has-value"
+          id="input"
+          maxLength={null}
+          minLength={null}
+          name="input"
+          onChange={[Function]}
+          onInvalid={[Function]}
+          required={false}
+          type="text"
+          value="text"
+        />
+        <label
+          htmlFor="input"
+        >
+          Value
+        </label>
+        <i
+          className="ico ico-check"
+        />
+      </div>
+    </div>
+  </styled.div>
+</Input>
+`;
+
+exports[`FD Input should render with value correctly 1`] = `
+<Input
+  id="input"
+  value="test value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa hANgQL"
+    >
+      <div
+        className="input"
+      >
+        <input
+          className="has-value"
+          id="input"
+          maxLength={null}
+          minLength={null}
+          name="input"
+          onChange={[Function]}
+          onInvalid={[Function]}
+          required={false}
+          type="text"
+          value="test value"
+        />
+        <label
+          htmlFor="input"
+        >
+          Value
+        </label>
+        <i
+          className="ico ico-check"
+        />
+      </div>
+    </div>
+  </styled.div>
+</Input>
+`;

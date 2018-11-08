@@ -1,0 +1,95 @@
+{
+  "name": "@fdmg/fd-inputs",
+  "version": "1.0.0",
+  "description": "FD-themed inputs",
+  "types": "dist/fd-inputs.d.ts",
+  "main": "dist/fd-inputs.js",
+  "files": [
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:FDMediagroep/fd-ts-react-inputs.git"
+  },
+  "scripts": {
+    "build-demo": "npm run copy-img && npm run copy-demo-html && webpack --mode=production --config webpack.demo.config.js",
+    "build-dev": "webpack --mode=development",
+    "build-prod": "cross-env NODE_ENV=production webpack --mode=production",
+    "copy-demo-html": "cpx -p -v \"demo/**/*.html\" \"dist/\"",
+    "copy-img": "cpx -p -v \"img/**/*\" \"dist/\"",
+    "lint": "tslint -p .",
+    "release": "npm update && npm i && npm run test && npm run lint && npm run build-prod",
+    "test": "jest",
+    "tsc": "tsc -d",
+    "updateSnapshot": "jest --updateSnapshot",
+    "watch": "npm run build-prod -- --watch",
+    "watch-demo": "npm run build-demo -- --watch"
+  },
+  "keywords": [
+    "FD",
+    "FDMG",
+    "Inputs",
+    "TypeScript",
+    "React"
+  ],
+  "author": "Willem Liu",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/enzyme": "^3.1.15",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/jest": "^23.3.9",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "@types/react-test-renderer": "^16.0.3",
+    "@types/styled-components": "^4.0.3",
+    "awesome-typescript-loader": "^5.2.1",
+    "chokidar": "^2.0.4",
+    "coveralls": "^3.0.2",
+    "cpx": "^1.5.0",
+    "cross-env": "^5.2.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "preact": "^8.3.1",
+    "preact-compat": "^3.18.4",
+    "react-test-renderer": "^16.6.1",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "styled-components": "^3.4.10"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "test/(.*)(test|spec)\\.(jsx?|tsx?)$",
+    "setupFiles": [],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "dist/coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "text-summary"
+    ]
+  }
+}
