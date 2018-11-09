@@ -14,7 +14,7 @@ exports[`FD Input should render correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": true,
-            "lastClassName": "hANgQL",
+            "lastClassName": "bLPdKg",
             "rules": Array [
               "
 display: inline-block;
@@ -39,6 +39,7 @@ p {
     font-family: ProximaNovaRegular,sans-serif;
     width: 100%;
     input {
+        font-family: ProximaNovaRegular,sans-serif;
         padding: 1.25rem .5rem .5rem .5rem;
         font-size: 14px;
         vertical-align: bottom;
@@ -46,6 +47,7 @@ p {
         border-radius: 2px;
         box-sizing: border-box;
         width: 100%;
+        height: unset;
         outline: none;
         margin: unset;
         &:focus {
@@ -86,7 +88,7 @@ p {
       forwardedRef={null}
     >
       <div
-        className="sc-bdVaJa hANgQL"
+        className="sc-bdVaJa bLPdKg"
       >
         <div
           className="input"
@@ -132,7 +134,7 @@ exports[`FD Input should render with value correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": true,
-            "lastClassName": "hANgQL",
+            "lastClassName": "bLPdKg",
             "rules": Array [
               "
 display: inline-block;
@@ -157,6 +159,7 @@ p {
     font-family: ProximaNovaRegular,sans-serif;
     width: 100%;
     input {
+        font-family: ProximaNovaRegular,sans-serif;
         padding: 1.25rem .5rem .5rem .5rem;
         font-size: 14px;
         vertical-align: bottom;
@@ -164,6 +167,7 @@ p {
         border-radius: 2px;
         box-sizing: border-box;
         width: 100%;
+        height: unset;
         outline: none;
         margin: unset;
         &:focus {
@@ -204,7 +208,7 @@ p {
       forwardedRef={null}
     >
       <div
-        className="sc-bdVaJa hANgQL"
+        className="sc-bdVaJa bLPdKg"
       >
         <div
           className="input"

@@ -1,6 +1,6 @@
 {
   "name": "@fdmg/fd-inputs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "FD-themed inputs",
   "types": "dist/fd-inputs.d.ts",
   "main": "dist/fd-inputs.js",
@@ -41,7 +41,7 @@
     "@types/enzyme": "^3.1.15",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^23.3.9",
-    "@types/react": "^16.4.18",
+    "@types/react": "^16.7.1",
     "@types/react-dom": "^16.0.9",
     "@types/react-test-renderer": "^16.0.3",
     "@types/styled-components": "^4.0.3",

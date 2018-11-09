@@ -22,19 +22,19 @@ export interface Props {
 export enum Patterns {
     MOBILE = "06[0-9]{8}",
     EMAIL = ".+@.+\\.[a-z]{2,3}"
-};
+}
 
 export default class Input extends React.PureComponent<Props, any> {
     state: any = {
-        value: '',
-        hasValue: false,
         errorMessage: this.props.errorMessage || 'Voer een geldige waarde in',
+        hasValue: false,
         label: this.props.label || "Value",
+        maxLength: this.props.maxLength || null,
+        minLength: this.props.minLength || null,
         required: this.props.required || false,
         type: this.props.type || 'text',
-        minLength: this.props.minLength || null,
-        maxLength: this.props.maxLength || null
-    }
+        value: ''
+    };
 
     componentDidMount() {
         const value = this.props.localStorage ? localStorage.getItem(`fd-input-${this.props.id}`) : this.props.value || '';
@@ -48,7 +48,7 @@ export default class Input extends React.PureComponent<Props, any> {
 
     checkValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        if(value) {
+        if (value) {
             (event.currentTarget as HTMLInputElement).setCustomValidity("");
             this.setState({hasValue: true, value});
         } else {
@@ -92,7 +92,7 @@ export default class Input extends React.PureComponent<Props, any> {
                         onInvalid={this.handleInvalid}
                     />
                     <label htmlFor={this.props.id}>{this.state.label}</label>
-                    <i className="ico ico-check"></i>
+                    <i className="ico ico-check"/>
                 </div>
             </StyledInput>
         );
@@ -156,4 +156,4 @@ p {
         transform: translate3d(0, -10px, 0);
     }
 }
-`
+`;
