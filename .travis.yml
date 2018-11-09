@@ -22,8 +22,10 @@ install:
 jobs:
   include:
     - stage: test
+      name: "Build demo"
       script: npm run build-demo
     - stage: test
+      name: "Unit test"
       script: npm test
 after_success:
 - cat ./dist/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
