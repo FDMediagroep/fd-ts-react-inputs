@@ -122,6 +122,7 @@ p {
     font-family: ProximaNovaRegular,sans-serif;
     width: 100%;
     input {
+        font-family: ProximaNovaRegular,sans-serif;
         padding: 1.25rem .5rem .5rem .5rem;
         font-size: 14px;
         vertical-align: bottom;
@@ -129,6 +130,7 @@ p {
         border-radius: 2px;
         box-sizing: border-box;
         width: 100%;
+        height: unset;
         outline: none;
         margin: unset;
         &:focus {
