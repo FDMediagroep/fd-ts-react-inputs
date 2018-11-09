@@ -188,7 +188,7 @@ p {
         margin: unset;
         &:focus {
             border: none;
-            border-bottom: 1px solid rgba(0,0,0,0.4);
+            box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0px 0px inset;
         }
     }
     label {

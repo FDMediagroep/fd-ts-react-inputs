@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import Input, { Patterns } from "../src/fd-inputs";
 import styled, { css } from 'styled-components';
 
-const StyledSection = styled('section')`
-    padding: 16px;
-`;
-
 const GlobalStyles = css`
     body {
         background-color: #ffeadb;
@@ -37,7 +33,7 @@ const StyledInputNoCheckMark = styled(StyledInputMarginRight)`
     }
 `;
 
-ReactDOM.render(<StyledSection>
+ReactDOM.render(<section>
         <style>{GlobalStyles}</style>
 
         <div>
@@ -66,5 +62,5 @@ ReactDOM.render(<StyledSection>
             <p>Dit veld heeft een standaard waarde.</p>
         </div>
         <div><button type="submit">Submit</button></div>
-    </StyledSection>,
+    </section>,
     document.getElementById('root'));
