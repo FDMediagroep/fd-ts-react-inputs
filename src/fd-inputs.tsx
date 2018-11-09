@@ -123,7 +123,7 @@ p {
     width: 100%;
     input {
         font-family: ProximaNovaRegular,sans-serif;
-        padding: 1.25rem .5rem .5rem .5rem;
+        padding: 1rem .5rem .5rem .5rem;
         font-size: 14px;
         vertical-align: bottom;
         border: none;
@@ -135,7 +135,6 @@ p {
         margin: unset;
         &:focus {
             border: none;
-            /* box-shadow: 0 0 5px rgba(0,0,0,0.1); */
             border-bottom: 1px solid rgba(0,0,0,0.4);
         }
     }
