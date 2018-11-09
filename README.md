@@ -86,3 +86,10 @@ export interface Props {
     localStorage?: boolean;
 }
 ```
+
+# Usage
+```
+import Button from '@fdmg/fd-inputs';
+...
+<Input id="email1" type="email" label="E-mailadres" required={true} pattern={Patterns.EMAIL} errorMessage="Voer een geldig e-mailadres in"/>
+```
