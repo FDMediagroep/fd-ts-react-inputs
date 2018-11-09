@@ -6,34 +6,114 @@ exports[`FD Input should render correctly 1`] = `
   localStorage={true}
 >
   <styled.div>
-    <div
-      className="sc-bdVaJa hANgQL"
+    <StyledComponent
+      forwardedClass={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": undefined,
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "hANgQL",
+            "rules": Array [
+              "
+display: inline-block;
+i {
+    transition: .4s opacity ease-out;
+    opacity: 0;
+    position: absolute;
+    right: .5rem;
+    top: 13px;
+}
+input:valid ~ i {
+    opacity: 1;
+}
+p {
+    font-size: 12px;
+    color: #677381;
+}
+
+.input {
+    position: relative;
+    float: left;
+    font-family: ProximaNovaRegular,sans-serif;
+    width: 100%;
+    input {
+        padding: 1.25rem .5rem .5rem .5rem;
+        font-size: 14px;
+        vertical-align: bottom;
+        border: none;
+        border-radius: 2px;
+        box-sizing: border-box;
+        width: 100%;
+        outline: none;
+        margin: unset;
+        &:focus {
+            border: none;
+            /* box-shadow: 0 0 5px rgba(0,0,0,0.1); */
+            border-bottom: 1px solid rgba(0,0,0,0.4);
+        }
+    }
+    label {
+        position: absolute;
+        top: 0.7rem;
+        left: .5rem;
+        padding: 0;
+        transition: all 200ms;
+        color: #677381;
+        font-size: 14px;
+        user-select: none;
+        cursor: text;
+    }
+    input:focus ~ label,
+    input.has-value ~ label {
+        font-size: 50%;
+        transform: translate3d(0, -10px, 0);
+    }
+}
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
     >
       <div
-        className="input"
+        className="sc-bdVaJa hANgQL"
       >
-        <input
-          className="has-value"
-          id="input"
-          maxLength={null}
-          minLength={null}
-          name="input"
-          onChange={[Function]}
-          onInvalid={[Function]}
-          required={false}
-          type="text"
-          value="text"
-        />
-        <label
-          htmlFor="input"
+        <div
+          className="input"
         >
-          Value
-        </label>
-        <i
-          className="ico ico-check"
-        />
+          <input
+            className="has-value"
+            id="input"
+            maxLength={null}
+            minLength={null}
+            name="input"
+            onChange={[Function]}
+            onInvalid={[Function]}
+            required={false}
+            type="text"
+            value="text"
+          />
+          <label
+            htmlFor="input"
+          >
+            Value
+          </label>
+          <i
+            className="ico ico-check"
+          />
+        </div>
       </div>
-    </div>
+    </StyledComponent>
   </styled.div>
 </Input>
 `;
@@ -44,34 +124,114 @@ exports[`FD Input should render with value correctly 1`] = `
   value="test value"
 >
   <styled.div>
-    <div
-      className="sc-bdVaJa hANgQL"
+    <StyledComponent
+      forwardedClass={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": undefined,
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "hANgQL",
+            "rules": Array [
+              "
+display: inline-block;
+i {
+    transition: .4s opacity ease-out;
+    opacity: 0;
+    position: absolute;
+    right: .5rem;
+    top: 13px;
+}
+input:valid ~ i {
+    opacity: 1;
+}
+p {
+    font-size: 12px;
+    color: #677381;
+}
+
+.input {
+    position: relative;
+    float: left;
+    font-family: ProximaNovaRegular,sans-serif;
+    width: 100%;
+    input {
+        padding: 1.25rem .5rem .5rem .5rem;
+        font-size: 14px;
+        vertical-align: bottom;
+        border: none;
+        border-radius: 2px;
+        box-sizing: border-box;
+        width: 100%;
+        outline: none;
+        margin: unset;
+        &:focus {
+            border: none;
+            /* box-shadow: 0 0 5px rgba(0,0,0,0.1); */
+            border-bottom: 1px solid rgba(0,0,0,0.4);
+        }
+    }
+    label {
+        position: absolute;
+        top: 0.7rem;
+        left: .5rem;
+        padding: 0;
+        transition: all 200ms;
+        color: #677381;
+        font-size: 14px;
+        user-select: none;
+        cursor: text;
+    }
+    input:focus ~ label,
+    input.has-value ~ label {
+        font-size: 50%;
+        transform: translate3d(0, -10px, 0);
+    }
+}
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
     >
       <div
-        className="input"
+        className="sc-bdVaJa hANgQL"
       >
-        <input
-          className="has-value"
-          id="input"
-          maxLength={null}
-          minLength={null}
-          name="input"
-          onChange={[Function]}
-          onInvalid={[Function]}
-          required={false}
-          type="text"
-          value="test value"
-        />
-        <label
-          htmlFor="input"
+        <div
+          className="input"
         >
-          Value
-        </label>
-        <i
-          className="ico ico-check"
-        />
+          <input
+            className="has-value"
+            id="input"
+            maxLength={null}
+            minLength={null}
+            name="input"
+            onChange={[Function]}
+            onInvalid={[Function]}
+            required={false}
+            type="text"
+            value="test value"
+          />
+          <label
+            htmlFor="input"
+          >
+            Value
+          </label>
+          <i
+            className="ico ico-check"
+          />
+        </div>
       </div>
-    </div>
+    </StyledComponent>
   </styled.div>
 </Input>
 `;
