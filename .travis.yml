@@ -9,6 +9,9 @@ addons:
   apt:
     packages:
     - nodejs-legacy
+branches:
+  only:
+  - master
 stages:
   - test
 before_install:
@@ -36,6 +39,8 @@ deploy:
     acl: public_read
     local_dir: dist
     upload_dir: react/inputs
+    on:
+      branch: master
     access_key_id:
       secure: NqGZoUEFBMDKh2/R4mEWjetuQxvvqBEw76ipj3HuQf/vhc6uJTbGU75QsqXVfJJOFZkLEig1/cIXYgFFXwkj2cUQaKDy6Sro3OO8wUCJEVjopiD54B2m4qKvTR9auOFzJJ0fZprRmmvvdImo/OYu43QT5Jlxf66OXV83BZ7rj207R716aY8YW0SjsNJ7h0HUsQpwz2Iokx7kc7ANCpMC7YlxAAHPMRlz5fwPSFIs0+VDWXpv9nVgbiRAw/gyv5dGfcWLWegjv/bn2G9ySjEXWb0j7eRR96DVFf1HRs/jk+fNekFtRn55n5Go8GqA8kyG+kM5VERVsrtcnw+F1G84LCZv1YB+n/Ws/cJSRlLpnAvsFu2mh7Jkt6UqC5ewwRoiNf1NcU2ml106LSqpeU535VfEWZY2fi6QkVcmQr3C7X9fznK7Wt0P2hoKdM8PobNPrwwtcj2/Pncni48JyL2Wse1wp2hkceohwzxurTGgf3NuWP8EYEGPlEY9lwEoaPsNiwaPyvkHyoAgaL0kNyt4XyxzVJjeQq9+8a7vjqKEo+ImEiXXr6+iOlKxgbuHJAzrHZKRb03+PU/JsoKHGTY9438xMf9pcr3FC93EsgvtlE5HBRa+z1qVMETrYUYs4G6hVq3ieRo9M4Wi3khBwCVZxU2S7lA2NLxXN1D8JuV/hBg=
     secret_access_key:
