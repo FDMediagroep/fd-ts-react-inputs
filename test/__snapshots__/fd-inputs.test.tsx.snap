@@ -21,6 +21,7 @@ exports[`FD Input should render correctly 1`] = `
           onChange={[Function]}
           onInvalid={[Function]}
           required={false}
+          title="Value"
           type="text"
           value="text"
         />
@@ -28,6 +29,87 @@ exports[`FD Input should render correctly 1`] = `
           htmlFor="input"
         >
           Value
+        </label>
+        <i
+          className="ico ico-check"
+        />
+      </div>
+    </div>
+  </styled.div>
+</Input>
+`;
+
+exports[`FD Input should render with label correctly 1`] = `
+<Input
+  id="input"
+  label="this is the label"
+  value="test value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa jCSxZN"
+    >
+      <div
+        className="input"
+      >
+        <input
+          className="has-value"
+          id="input"
+          maxLength={null}
+          minLength={null}
+          name="input"
+          onChange={[Function]}
+          onInvalid={[Function]}
+          required={false}
+          title="this is the label"
+          type="text"
+          value="test value"
+        />
+        <label
+          htmlFor="input"
+        >
+          this is the label
+        </label>
+        <i
+          className="ico ico-check"
+        />
+      </div>
+    </div>
+  </styled.div>
+</Input>
+`;
+
+exports[`FD Input should render with title correctly 1`] = `
+<Input
+  id="input"
+  label="this is the label"
+  title="this is the title"
+  value="test value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa jCSxZN"
+    >
+      <div
+        className="input"
+      >
+        <input
+          className="has-value"
+          id="input"
+          maxLength={null}
+          minLength={null}
+          name="input"
+          onChange={[Function]}
+          onInvalid={[Function]}
+          required={false}
+          title="this is the title"
+          type="text"
+          value="test value"
+        />
+        <label
+          htmlFor="input"
+        >
+          this is the label
         </label>
         <i
           className="ico ico-check"
@@ -59,6 +141,7 @@ exports[`FD Input should render with value correctly 1`] = `
           onChange={[Function]}
           onInvalid={[Function]}
           required={false}
+          title="Value"
           type="text"
           value="test value"
         />

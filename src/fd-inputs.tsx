@@ -41,6 +41,11 @@ export interface Props {
     label?: string;
 
     /**
+     * Optional. The native browser tooltip text shown on hover. When omitted then the label is used.
+     */
+    title?: string;
+
+    /**
      * Optional. Custom error message shown when the value does fit the pattern.
      */
     errorMessage?: string;
@@ -143,6 +148,7 @@ export default class Input extends React.PureComponent<Props, any> {
                         required={this.state.required}
                         pattern={this.props.pattern}
                         onInvalid={this.handleInvalid}
+                        title={this.props.title ? this.props.title : this.state.label}
                     />
                     <label htmlFor={this.props.id}>{this.state.label}</label>
                     <i className="ico ico-check"/>

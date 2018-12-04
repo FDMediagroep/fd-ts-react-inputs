@@ -22,4 +22,14 @@ describe('FD Input', () => {
         expect(toJSON(wrapper)).toMatchSnapshot();
     });
 
+    it('should render with label correctly', () => {
+        const wrapper = mount(<Input id="input" label="this is the label" value="test value"/>);
+        expect(toJSON(wrapper)).toMatchSnapshot();
+    });
+
+    it('should render with title correctly', () => {
+        const wrapper = mount(<Input id="input" title="this is the title" label="this is the label" value="test value"/>);
+        expect(toJSON(wrapper)).toMatchSnapshot();
+    });
+
 });

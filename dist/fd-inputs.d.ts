@@ -30,6 +30,10 @@ export interface Props {
      */
     label?: string;
     /**
+     * Optional. The native browser tooltip text shown on hover. When omitted then the label is used.
+     */
+    title?: string;
+    /**
      * Optional. Custom error message shown when the value does fit the pattern.
      */
     errorMessage?: string;
