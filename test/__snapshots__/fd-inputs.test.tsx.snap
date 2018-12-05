@@ -7,7 +7,7 @@ exports[`FD Input should render correctly 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa jCSxZN"
+      className="sc-bdVaJa iOmvwH"
     >
       <div
         className="input"
@@ -47,7 +47,7 @@ exports[`FD Input should render with label correctly 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa jCSxZN"
+      className="sc-bdVaJa iOmvwH"
     >
       <div
         className="input"
@@ -88,7 +88,7 @@ exports[`FD Input should render with title correctly 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa jCSxZN"
+      className="sc-bdVaJa iOmvwH"
     >
       <div
         className="input"
@@ -127,7 +127,7 @@ exports[`FD Input should render with value correctly 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa jCSxZN"
+      className="sc-bdVaJa iOmvwH"
     >
       <div
         className="input"

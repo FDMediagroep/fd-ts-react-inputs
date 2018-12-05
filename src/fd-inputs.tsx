@@ -182,7 +182,7 @@ p {
     width: 100%;
     input {
         font-family: ProximaNovaRegular,sans-serif;
-        padding: 1rem .5rem .5rem .5rem;
+        padding: 1rem .5rem 2rem .5rem;
         font-size: 14px;
         vertical-align: bottom;
         border: none;
