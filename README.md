@@ -84,6 +84,10 @@ export interface Props {
      */
     onChange?: (value: React.ChangeEvent<HTMLInputElement>) => void;
 
+    onFocus?: (value: React.FocusEvent<HTMLInputElement>) => void;
+
+    onBlur?: (value: React.FocusEvent<HTMLInputElement>) => void;
+
     /**
      * Optional. Store the value to localStorage which will be used as default value upon subsequent visits of the page.
      * Tip: `id` is used as suffix for the property name.
