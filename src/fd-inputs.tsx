@@ -70,6 +70,10 @@ export interface Props {
      */
     onChange?: (value: React.ChangeEvent<HTMLInputElement>) => void;
 
+    onFocus?: (value: React.FocusEvent<HTMLInputElement>) => void;
+
+    onBlur?: (value: React.FocusEvent<HTMLInputElement>) => void;
+
     /**
      * Optional. Store the value to localStorage which will be used as default value upon subsequent visits of the page.
      * Tip: `id` is used as suffix for the property name.
@@ -149,6 +153,8 @@ export default class Input extends React.PureComponent<Props, any> {
                         pattern={this.props.pattern}
                         onInvalid={this.handleInvalid}
                         title={this.props.title ? this.props.title : this.state.label}
+                        onFocus={this.props.onFocus}
+                        onBlur={this.props.onBlur}
                     />
                     <label htmlFor={this.props.id}>{this.state.label}</label>
                     <i className="ico ico-check"/>
