@@ -90,7 +90,6 @@ export default class Input extends React.PureComponent<Props, any> {
     state: any = {
         errorMessage: this.props.errorMessage || 'Voer een geldige waarde in',
         hasValue: false,
-        label: this.props.label || "Value",
         maxLength: this.props.maxLength || null,
         minLength: this.props.minLength || null,
         required: this.props.required || false,
@@ -152,11 +151,11 @@ export default class Input extends React.PureComponent<Props, any> {
                         required={this.state.required}
                         pattern={this.props.pattern}
                         onInvalid={this.handleInvalid}
-                        title={this.props.title ? this.props.title : this.state.label}
+                        title={this.props.title ? this.props.title : this.props.label || "Value"}
                         onFocus={this.props.onFocus}
                         onBlur={this.props.onBlur}
                     />
-                    <label htmlFor={this.props.id}>{this.state.label}</label>
+                    <label htmlFor={this.props.id}>{this.props.label || "Value"}</label>
                     <i className="ico ico-check"/>
                 </div>
             </StyledInput>
