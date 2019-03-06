@@ -18,6 +18,11 @@ export interface Props {
      * Optional name used as name for the input field. When omitted the id is used.
      */
     name?: string;
+
+    /**
+     * Optional value for the input field. Default is 1.
+     */
+    value?: string;
 }
 
 export default class Checkbox extends PureComponent<Props, any> {
@@ -27,8 +32,8 @@ export default class Checkbox extends PureComponent<Props, any> {
                 <GlobalStyle/>
 
                 <label className="fd-checkbox">
-                    <input id={this.props.id} type="checkbox" name={this.props.name ? this.props.name : this.props.id} value="nl" defaultChecked={this.props.defaultChecked}/>
-                    <span className="input-checkbox-label">{this.props.label}</span>
+                    <input id={this.props.id} type="checkbox" name={this.props.name ? this.props.name : this.props.id} value="1" defaultChecked={this.props.defaultChecked}/>
+                    <span className="checkbox">{this.props.label}</span>
                 </label>
             </>
         );
@@ -41,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
         opacity: 0;
         position: absolute;
     }
-    .input-checkbox-label {
+    .checkbox {
         user-select: none;
         position: relative;
         display: inline-block;
@@ -80,7 +85,7 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
-    input:checked ~ .input-checkbox-label {
+    input:checked ~ .checkbox {
         &:before {
             background-color: #E1842B;
         }
