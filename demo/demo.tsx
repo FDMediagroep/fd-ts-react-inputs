@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Input, { Patterns } from "../src/fd-inputs";
+import {TextInputs, Patterns, Switch } from "../src/fd-inputs";
 import styled, { css } from 'styled-components';
 
 const GlobalStyles = css`
@@ -14,11 +14,11 @@ const GlobalStyles = css`
     }
     p {
         font-size: 12px;
-        font-family: ProximaNovaRegular, sans-serif;
+        font-family: 'ProximaNovaRegular', sans-serif;
     }
 `;
 
-const StyledInputMarginRight = styled(Input)`
+const StyledInputMarginRight = styled(TextInputs)`
     margin-right: 1rem;
 `;
 
@@ -37,30 +37,32 @@ const StyledInputNoCheckMark = styled(StyledInputMarginRight)`
 ReactDOM.render(<section>
         <style>{GlobalStyles}</style>
 
+        <div><Switch id="switch" label="Do you want to toggle this?"/></div>
+
         <div>
-            <Input id="email1" type="email" label="E-mailadres" required={true} pattern={Patterns.EMAIL} errorMessage="Voer een geldig e-mailadres in"/>
+            <TextInputs id="email1" type="email" label="E-mailadres" required={true} pattern={Patterns.EMAIL} errorMessage="Enter correct e-mail address"/>
         </div>
-        <div><Input id="default" required={true}/></div>
+        <div><TextInputs id="default" required={true}/></div>
         <div>
-            <StyledInputMarginRight id="default2" />
-            <p>Niet verplicht invoerveld.</p>
-        </div>
-        <div>
-            <StyledInputNoCheckMark id="default3" />
-            <p>Niet verplicht invoerveld zonder vinkje.</p>
-        </div>
-        <div><Input id="mobile1" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Voer een geldig mobiele nummer in"/></div>
-        <div>
-            <StyledInput id="mobile2" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Voer een geldig mobiele nummer in"/>
-            <p>Dit is een bredere invoerveld.</p>
+            <StyledInputMarginRight id="default2" description="Not mandatory" />
         </div>
         <div>
-            <StyledInputMarginRight id="mobile3" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} localStorage={true} pattern={Patterns.MOBILE} errorMessage="Voer een geldig mobiele nummer in"/>
-            <p>Dit nummer wordt in de localStorage bijgehouden.</p>
+            <StyledInputNoCheckMark id="default3" description="Not mandatory and no check icon"/>
         </div>
         <div>
-            <StyledInputMarginRight id="mobile4" value="0612345678" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Voer een geldig mobiele nummer in"/>
-            <p>Dit veld heeft een standaard waarde.</p>
+            <TextInputs id="default4" placeholder="Enter a value" description="With placeholder text" required={true}/>
+        </div>
+        <div><TextInputs id="date1" type="date" label="Date" required={true} description="Mandatory field" errorMessage="Please pick a date"/></div>
+        <div><TextInputs id="date2" type="date" label="Date" description="Not mandatory"/></div>
+        <div><TextInputs id="mobile1" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)"/></div>
+        <div>
+            <StyledInput id="mobile2" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)" description="This field is wide"/>
+        </div>
+        <div>
+            <StyledInputMarginRight id="mobile3" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} localStorage={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)" description="This value is stored in the localStorage"/>
+        </div>
+        <div>
+            <StyledInputMarginRight id="mobile4" value="0612345678" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)" description="This input has a default value"/>
         </div>
         <div><button type="submit">Submit</button></div>
     </section>,
