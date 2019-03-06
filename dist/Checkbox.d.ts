@@ -13,6 +13,10 @@ export interface Props {
      * Optional name used as name for the input field. When omitted the id is used.
      */
     name?: string;
+    /**
+     * Optional value for the input field. Default is 1.
+     */
+    value?: string;
 }
 export default class Checkbox extends PureComponent<Props, any> {
     render(): JSX.Element;
