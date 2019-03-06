@@ -13,7 +13,6 @@ exports[`FD Input should render correctly 1`] = `
       className="input"
     >
       <input
-        className="has-value"
         id="input"
         maxLength={null}
         minLength={null}
@@ -60,7 +59,6 @@ exports[`FD Input should render with label correctly 1`] = `
       className="input"
     >
       <input
-        className="has-value"
         id="input"
         maxLength={null}
         minLength={null}
@@ -108,7 +106,6 @@ exports[`FD Input should render with title correctly 1`] = `
       className="input"
     >
       <input
-        className="has-value"
         id="input"
         maxLength={null}
         minLength={null}
@@ -154,7 +151,6 @@ exports[`FD Input should render with value correctly 1`] = `
       className="input"
     >
       <input
-        className="has-value"
         id="input"
         maxLength={null}
         minLength={null}

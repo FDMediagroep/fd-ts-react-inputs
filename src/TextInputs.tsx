@@ -100,7 +100,6 @@ export enum Patterns {
 export default class TextInputs extends React.PureComponent<Props, any> {
     state: any = {
         errorMessage: this.props.errorMessage || 'Voer een geldige waarde in',
-        hasValue: false,
         maxLength: this.props.maxLength || null,
         minLength: this.props.minLength || null,
         required: this.props.required || false,
@@ -112,7 +111,6 @@ export default class TextInputs extends React.PureComponent<Props, any> {
         const value = this.props.localStorage ? localStorage.getItem(`fd-input-${this.props.id}`) : this.props.value || '';
         if (value) {
             this.setState({
-                hasValue: true,
                 value
             });
         }
@@ -122,9 +120,9 @@ export default class TextInputs extends React.PureComponent<Props, any> {
         const value = event.target.value;
         if (value) {
             (event.currentTarget as HTMLInputElement).setCustomValidity("");
-            this.setState({hasValue: true, value});
+            this.setState({value});
         } else {
-            this.setState({hasValue: false, value: ''});
+            this.setState({value: ''});
         }
         if (this.props.onChange) {
             this.props.onChange(event);
@@ -154,7 +152,6 @@ export default class TextInputs extends React.PureComponent<Props, any> {
                 <div className={`fd-input${this.props.className ? ` ${this.props.className}` : ''}`}>
                     <div className="input">
                         <input
-                            className={this.state.hasValue ? 'has-value' : ''}
                             id={this.props.id}
                             name={this.props.name ? this.props.name : this.props.id}
                             type={this.state.type}
@@ -246,7 +243,7 @@ const GlobalStyle = createGlobalStyle`
         input[type="date"] ~ label,
         input[type="datetime"] ~ label,
         input:focus ~ label,
-        input.has-value ~ label {
+        input:not(:placeholder-shown) ~ label {
             font-size: .75rem;
             top: .5rem;
         }
