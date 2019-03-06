@@ -240,10 +240,20 @@ const GlobalStyle = createGlobalStyle`
         }
 
         input:not([type="date"]):not([type="datetime"]):not([placeholder=' ']) ~ label,
+        input:not(:placeholder-shown) ~ label {
+            font-size: .75rem;
+            top: .5rem;
+        }
+
+        input:not(:-ms-input-placeholder):not([placeholder=' ']) ~ label,
+        input:-ms-input-placeholder:not([placeholder=' ']) ~ label {
+            font-size: .75rem;
+            top: .5rem;
+        }
+
         input[type="date"] ~ label,
         input[type="datetime"] ~ label,
-        input:focus ~ label,
-        input:not(:placeholder-shown) ~ label {
+        input:focus ~ label {
             font-size: .75rem;
             top: .5rem;
         }
