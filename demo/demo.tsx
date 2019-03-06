@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {TextInputs, Patterns, Switch, Checkbox } from "../src/fd-inputs";
+import {TextInputs, Patterns, Switch, Checkbox, Radio } from "../src/fd-inputs";
 import styled, { css } from 'styled-components';
 
 const GlobalStyles = css`
@@ -42,6 +42,11 @@ ReactDOM.render(<section>
         <div><Checkbox id="checkbox" label="Check this out"/></div>
 
         <div><Checkbox id="checkbox2" label="Default checked" defaultChecked={true}/></div>
+
+        <div>
+            <Radio id="radio1" label="Radio 1" name="radio-group-1"/>
+            <Radio id="radio2" label="Radio 2" name="radio-group-1"/>
+        </div>
 
         <div>
             <TextInputs id="email1" type="email" label="E-mailadres" required={true} pattern={Patterns.EMAIL} errorMessage="Enter correct e-mail address"/>
