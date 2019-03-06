@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {TextInputs, Patterns, Switch } from "../src/fd-inputs";
+import {TextInputs, Patterns, Switch, Checkbox } from "../src/fd-inputs";
 import styled, { css } from 'styled-components';
 
 const GlobalStyles = css`
@@ -38,6 +38,10 @@ ReactDOM.render(<section>
         <style>{GlobalStyles}</style>
 
         <div><Switch id="switch" label="Do you want to toggle this?"/></div>
+
+        <div><Checkbox id="checkbox" label="Check this out"/></div>
+
+        <div><Checkbox id="checkbox2" label="Default checked" defaultChecked={true}/></div>
 
         <div>
             <TextInputs id="email1" type="email" label="E-mailadres" required={true} pattern={Patterns.EMAIL} errorMessage="Enter correct e-mail address"/>
