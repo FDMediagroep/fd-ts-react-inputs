@@ -73,3 +73,5 @@ export default class Input extends React.PureComponent<Props, any> {
     handleInvalid: (event: React.FormEvent<Element>) => void;
     render(): JSX.Element;
 }
+declare const GlobalStyle: import("styled-components").GlobalStyleComponent<{}, import("styled-components").DefaultTheme>;
+export { GlobalStyle as StyledInput };

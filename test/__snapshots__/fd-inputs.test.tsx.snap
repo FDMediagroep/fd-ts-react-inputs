@@ -7,7 +7,7 @@ exports[`FD Input should render correctly 1`] = `
 >
   <GlobalStyleComponent />
   <div
-    className="fd-inputs"
+    className="fd-input"
   >
     <div
       className="input"
@@ -20,6 +20,7 @@ exports[`FD Input should render correctly 1`] = `
         name="input"
         onChange={[Function]}
         onInvalid={[Function]}
+        placeholder=" "
         required={false}
         title="Value"
         type="text"
@@ -29,10 +30,11 @@ exports[`FD Input should render correctly 1`] = `
         htmlFor="input"
       >
         Value
+         
+        <i
+          className="icon-check"
+        />
       </label>
-      <i
-        className="ico ico-check"
-      />
     </div>
   </div>
 </Input>
@@ -46,7 +48,7 @@ exports[`FD Input should render with label correctly 1`] = `
 >
   <GlobalStyleComponent />
   <div
-    className="fd-inputs"
+    className="fd-input"
   >
     <div
       className="input"
@@ -59,6 +61,7 @@ exports[`FD Input should render with label correctly 1`] = `
         name="input"
         onChange={[Function]}
         onInvalid={[Function]}
+        placeholder=" "
         required={false}
         title="this is the label"
         type="text"
@@ -68,10 +71,11 @@ exports[`FD Input should render with label correctly 1`] = `
         htmlFor="input"
       >
         this is the label
+         
+        <i
+          className="icon-check"
+        />
       </label>
-      <i
-        className="ico ico-check"
-      />
     </div>
   </div>
 </Input>
@@ -86,7 +90,7 @@ exports[`FD Input should render with title correctly 1`] = `
 >
   <GlobalStyleComponent />
   <div
-    className="fd-inputs"
+    className="fd-input"
   >
     <div
       className="input"
@@ -99,6 +103,7 @@ exports[`FD Input should render with title correctly 1`] = `
         name="input"
         onChange={[Function]}
         onInvalid={[Function]}
+        placeholder=" "
         required={false}
         title="this is the title"
         type="text"
@@ -108,10 +113,11 @@ exports[`FD Input should render with title correctly 1`] = `
         htmlFor="input"
       >
         this is the label
+         
+        <i
+          className="icon-check"
+        />
       </label>
-      <i
-        className="ico ico-check"
-      />
     </div>
   </div>
 </Input>
@@ -124,7 +130,7 @@ exports[`FD Input should render with value correctly 1`] = `
 >
   <GlobalStyleComponent />
   <div
-    className="fd-inputs"
+    className="fd-input"
   >
     <div
       className="input"
@@ -137,6 +143,7 @@ exports[`FD Input should render with value correctly 1`] = `
         name="input"
         onChange={[Function]}
         onInvalid={[Function]}
+        placeholder=" "
         required={false}
         title="Value"
         type="text"
@@ -146,10 +153,11 @@ exports[`FD Input should render with value correctly 1`] = `
         htmlFor="input"
       >
         Value
+         
+        <i
+          className="icon-check"
+        />
       </label>
-      <i
-        className="ico ico-check"
-      />
     </div>
   </div>
 </Input>

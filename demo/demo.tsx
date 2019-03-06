@@ -8,6 +8,7 @@ const GlobalStyles = css`
         background-color: #ffeadb;
     }
     section > div {
+        margin-top: 1rem;
         margin-bottom: 1rem;
         display: flex;
     }

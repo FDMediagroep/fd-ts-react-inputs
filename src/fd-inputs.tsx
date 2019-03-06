@@ -125,7 +125,7 @@ export default class Input extends React.PureComponent<Props, any> {
 
     store = (value: string) => {
         if (value) {
-            localStorage.setItem(`fd-input-${this.props.id}`, this.state.value);
+            localStorage.setItem(`fd-input-${this.props.id}`, value);
         } else {
             localStorage.removeItem(`fd-input-${this.props.id}`);
         }
@@ -140,7 +140,7 @@ export default class Input extends React.PureComponent<Props, any> {
             <>
                 <GlobalStyle/>
 
-                <div className={`fd-inputs${this.props.className ? ` ${this.props.className}` : ''}`}>
+                <div className={`fd-input${this.props.className ? ` ${this.props.className}` : ''}`}>
                     <div className="input">
                         <input
                             className={this.state.hasValue ? 'has-value' : ''}
@@ -157,9 +157,9 @@ export default class Input extends React.PureComponent<Props, any> {
                             title={this.props.title ? this.props.title : this.props.label || "Value"}
                             onFocus={this.props.onFocus}
                             onBlur={this.props.onBlur}
+                            placeholder=" "
                         />
-                        <label htmlFor={this.props.id}>{this.props.label || "Value"}</label>
-                        <i className="ico ico-check"/>
+                        <label htmlFor={this.props.id}>{this.props.label || "Value"} <i className="icon-check"/></label>
                     </div>
                 </div>
             </>
@@ -168,16 +168,16 @@ export default class Input extends React.PureComponent<Props, any> {
 }
 
 const GlobalStyle = createGlobalStyle`
-.fd-inputs {
+.fd-input {
     display: inline-block;
     i {
         transition: .4s opacity ease-out;
         opacity: 0;
-        position: absolute;
-        right: .5rem;
-        top: 13px;
+        position: relative;
+        color: #3CAB87;
     }
-    input:valid ~ i {
+    input:not(:required):not(:placeholder-shown) ~ label > i,
+    input:required:valid ~ label > i {
         opacity: 1;
     }
     p {
@@ -192,37 +192,47 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         input {
             font-family: 'ProximaNovaRegular',sans-serif;
-            padding: 1rem 2rem .5rem .5rem;
-            font-size: 14px;
+            padding: 1.4rem 1rem .6rem 1rem;
+            font-size: 1rem;
             vertical-align: bottom;
             border: none;
             border-bottom: 0.125rem solid #ccbeb3;
-            border-radius: 2px;
+            &:hover {
+                border-color: #99908a;
+            }
+            &:valid {
+                border-color: #49a3a1;
+            }
+            &:focus {
+                border: none;
+                border-bottom: 0.125rem solid #49a3a1;
+            }
+            border-radius: 0.1875rem;
             box-sizing: border-box;
             width: 100%;
             height: unset;
             outline: none;
             margin: unset;
-            &:focus {
-                border: none;
-                box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0px 0px inset;
-            }
+            color: #191919;
         }
         label {
+            font-family: 'ProximaNovaRegular',sans-serif;
             position: absolute;
-            top: 0.7rem;
-            left: .5rem;
+            top: 1.2rem;
+            left: 1rem;
+            line-height: 1;
             padding: 0;
-            transition: all 200ms;
+            transition: all .1s;
             color: #677381;
-            font-size: 14px;
+            font-size: 1rem;
             user-select: none;
+            white-space: nowrap;
             cursor: text;
         }
         input:focus ~ label,
         input.has-value ~ label {
-            font-size: 50%;
-            transform: translate3d(0, -10px, 0);
+            font-size: .75rem;
+            top: .5rem;
         }
     }
 }
