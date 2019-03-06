@@ -32,7 +32,7 @@ export default class Checkbox extends PureComponent<Props, any> {
                 <GlobalStyle/>
 
                 <label className="fd-checkbox">
-                    <input id={this.props.id} type="checkbox" name={this.props.name ? this.props.name : this.props.id} value="1" defaultChecked={this.props.defaultChecked}/>
+                    <input id={this.props.id} type="checkbox" name={this.props.name ? this.props.name : this.props.id} value={this.props.value} defaultChecked={this.props.defaultChecked}/>
                     <span className="checkbox">{this.props.label}</span>
                 </label>
             </>
