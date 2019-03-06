@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 declare var localStorage: any;
 
@@ -137,86 +137,95 @@ export default class Input extends React.PureComponent<Props, any> {
 
     render() {
         return (
-            <StyledInput className={this.props.className}>
-                <div className="input">
-                    <input
-                        className={this.state.hasValue ? 'has-value' : ''}
-                        id={this.props.id}
-                        name={this.props.name ? this.props.name : this.props.id}
-                        type={this.state.type}
-                        minLength={this.state.minLength}
-                        maxLength={this.state.maxLength}
-                        onChange={this.checkValue}
-                        value={this.state.value}
-                        required={this.state.required}
-                        pattern={this.props.pattern}
-                        onInvalid={this.handleInvalid}
-                        title={this.props.title ? this.props.title : this.props.label || "Value"}
-                        onFocus={this.props.onFocus}
-                        onBlur={this.props.onBlur}
-                    />
-                    <label htmlFor={this.props.id}>{this.props.label || "Value"}</label>
-                    <i className="ico ico-check"/>
+            <>
+                <GlobalStyle/>
+
+                <div className={`fd-inputs${this.props.className ? ` ${this.props.className}` : ''}`}>
+                    <div className="input">
+                        <input
+                            className={this.state.hasValue ? 'has-value' : ''}
+                            id={this.props.id}
+                            name={this.props.name ? this.props.name : this.props.id}
+                            type={this.state.type}
+                            minLength={this.state.minLength}
+                            maxLength={this.state.maxLength}
+                            onChange={this.checkValue}
+                            value={this.state.value}
+                            required={this.state.required}
+                            pattern={this.props.pattern}
+                            onInvalid={this.handleInvalid}
+                            title={this.props.title ? this.props.title : this.props.label || "Value"}
+                            onFocus={this.props.onFocus}
+                            onBlur={this.props.onBlur}
+                        />
+                        <label htmlFor={this.props.id}>{this.props.label || "Value"}</label>
+                        <i className="ico ico-check"/>
+                    </div>
                 </div>
-            </StyledInput>
+            </>
         );
     }
 }
 
-const StyledInput = styled('div')`
-display: inline-block;
-i {
-    transition: .4s opacity ease-out;
-    opacity: 0;
-    position: absolute;
-    right: .5rem;
-    top: 13px;
-}
-input:valid ~ i {
-    opacity: 1;
-}
-p {
-    font-size: 12px;
-    color: #677381;
-}
-
-.input {
-    position: relative;
-    float: left;
-    font-family: ProximaNovaRegular,sans-serif;
-    width: 100%;
-    input {
-        font-family: ProximaNovaRegular,sans-serif;
-        padding: 1rem 2rem .5rem .5rem;
-        font-size: 14px;
-        vertical-align: bottom;
-        border: none;
-        border-radius: 2px;
-        box-sizing: border-box;
-        width: 100%;
-        height: unset;
-        outline: none;
-        margin: unset;
-        &:focus {
-            border: none;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0px 0px inset;
-        }
-    }
-    label {
+const GlobalStyle = createGlobalStyle`
+.fd-inputs {
+    display: inline-block;
+    i {
+        transition: .4s opacity ease-out;
+        opacity: 0;
         position: absolute;
-        top: 0.7rem;
-        left: .5rem;
-        padding: 0;
-        transition: all 200ms;
-        color: #677381;
-        font-size: 14px;
-        user-select: none;
-        cursor: text;
+        right: .5rem;
+        top: 13px;
     }
-    input:focus ~ label,
-    input.has-value ~ label {
-        font-size: 50%;
-        transform: translate3d(0, -10px, 0);
+    input:valid ~ i {
+        opacity: 1;
+    }
+    p {
+        font-size: 12px;
+        color: #677381;
+    }
+
+    .input {
+        position: relative;
+        float: left;
+        font-family: 'ProximaNovaRegular',sans-serif;
+        width: 100%;
+        input {
+            font-family: 'ProximaNovaRegular',sans-serif;
+            padding: 1rem 2rem .5rem .5rem;
+            font-size: 14px;
+            vertical-align: bottom;
+            border: none;
+            border-bottom: 0.125rem solid #ccbeb3;
+            border-radius: 2px;
+            box-sizing: border-box;
+            width: 100%;
+            height: unset;
+            outline: none;
+            margin: unset;
+            &:focus {
+                border: none;
+                box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0px 0px inset;
+            }
+        }
+        label {
+            position: absolute;
+            top: 0.7rem;
+            left: .5rem;
+            padding: 0;
+            transition: all 200ms;
+            color: #677381;
+            font-size: 14px;
+            user-select: none;
+            cursor: text;
+        }
+        input:focus ~ label,
+        input.has-value ~ label {
+            font-size: 50%;
+            transform: translate3d(0, -10px, 0);
+        }
     }
 }
 `;
+
+export { GlobalStyle as StyledInput};

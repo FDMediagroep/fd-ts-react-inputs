@@ -5,37 +5,36 @@ exports[`FD Input should render correctly 1`] = `
   id="input"
   localStorage={true}
 >
-  <styled.div>
+  <GlobalStyleComponent />
+  <div
+    className="fd-inputs"
+  >
     <div
-      className="sc-bdVaJa wKpHI"
+      className="input"
     >
-      <div
-        className="input"
+      <input
+        className="has-value"
+        id="input"
+        maxLength={null}
+        minLength={null}
+        name="input"
+        onChange={[Function]}
+        onInvalid={[Function]}
+        required={false}
+        title="Value"
+        type="text"
+        value="text"
+      />
+      <label
+        htmlFor="input"
       >
-        <input
-          className="has-value"
-          id="input"
-          maxLength={null}
-          minLength={null}
-          name="input"
-          onChange={[Function]}
-          onInvalid={[Function]}
-          required={false}
-          title="Value"
-          type="text"
-          value="text"
-        />
-        <label
-          htmlFor="input"
-        >
-          Value
-        </label>
-        <i
-          className="ico ico-check"
-        />
-      </div>
+        Value
+      </label>
+      <i
+        className="ico ico-check"
+      />
     </div>
-  </styled.div>
+  </div>
 </Input>
 `;
 
@@ -45,37 +44,36 @@ exports[`FD Input should render with label correctly 1`] = `
   label="this is the label"
   value="test value"
 >
-  <styled.div>
+  <GlobalStyleComponent />
+  <div
+    className="fd-inputs"
+  >
     <div
-      className="sc-bdVaJa wKpHI"
+      className="input"
     >
-      <div
-        className="input"
+      <input
+        className="has-value"
+        id="input"
+        maxLength={null}
+        minLength={null}
+        name="input"
+        onChange={[Function]}
+        onInvalid={[Function]}
+        required={false}
+        title="this is the label"
+        type="text"
+        value="test value"
+      />
+      <label
+        htmlFor="input"
       >
-        <input
-          className="has-value"
-          id="input"
-          maxLength={null}
-          minLength={null}
-          name="input"
-          onChange={[Function]}
-          onInvalid={[Function]}
-          required={false}
-          title="this is the label"
-          type="text"
-          value="test value"
-        />
-        <label
-          htmlFor="input"
-        >
-          this is the label
-        </label>
-        <i
-          className="ico ico-check"
-        />
-      </div>
+        this is the label
+      </label>
+      <i
+        className="ico ico-check"
+      />
     </div>
-  </styled.div>
+  </div>
 </Input>
 `;
 
@@ -86,37 +84,36 @@ exports[`FD Input should render with title correctly 1`] = `
   title="this is the title"
   value="test value"
 >
-  <styled.div>
+  <GlobalStyleComponent />
+  <div
+    className="fd-inputs"
+  >
     <div
-      className="sc-bdVaJa wKpHI"
+      className="input"
     >
-      <div
-        className="input"
+      <input
+        className="has-value"
+        id="input"
+        maxLength={null}
+        minLength={null}
+        name="input"
+        onChange={[Function]}
+        onInvalid={[Function]}
+        required={false}
+        title="this is the title"
+        type="text"
+        value="test value"
+      />
+      <label
+        htmlFor="input"
       >
-        <input
-          className="has-value"
-          id="input"
-          maxLength={null}
-          minLength={null}
-          name="input"
-          onChange={[Function]}
-          onInvalid={[Function]}
-          required={false}
-          title="this is the title"
-          type="text"
-          value="test value"
-        />
-        <label
-          htmlFor="input"
-        >
-          this is the label
-        </label>
-        <i
-          className="ico ico-check"
-        />
-      </div>
+        this is the label
+      </label>
+      <i
+        className="ico ico-check"
+      />
     </div>
-  </styled.div>
+  </div>
 </Input>
 `;
 
@@ -125,36 +122,35 @@ exports[`FD Input should render with value correctly 1`] = `
   id="input"
   value="test value"
 >
-  <styled.div>
+  <GlobalStyleComponent />
+  <div
+    className="fd-inputs"
+  >
     <div
-      className="sc-bdVaJa wKpHI"
+      className="input"
     >
-      <div
-        className="input"
+      <input
+        className="has-value"
+        id="input"
+        maxLength={null}
+        minLength={null}
+        name="input"
+        onChange={[Function]}
+        onInvalid={[Function]}
+        required={false}
+        title="Value"
+        type="text"
+        value="test value"
+      />
+      <label
+        htmlFor="input"
       >
-        <input
-          className="has-value"
-          id="input"
-          maxLength={null}
-          minLength={null}
-          name="input"
-          onChange={[Function]}
-          onInvalid={[Function]}
-          required={false}
-          title="Value"
-          type="text"
-          value="test value"
-        />
-        <label
-          htmlFor="input"
-        >
-          Value
-        </label>
-        <i
-          className="ico ico-check"
-        />
-      </div>
+        Value
+      </label>
+      <i
+        className="ico ico-check"
+      />
     </div>
-  </styled.div>
+  </div>
 </Input>
 `;

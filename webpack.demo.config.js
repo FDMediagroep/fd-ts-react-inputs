@@ -22,11 +22,7 @@ module.exports = {
         publicPath : ''
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        alias: {
-            'react': 'preact-compat',
-            'react-dom': 'preact-compat'
-        }
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
     plugins: [
         new webpack.DefinePlugin({
