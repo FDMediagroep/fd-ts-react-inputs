@@ -84,4 +84,4 @@ export default class TextInputs extends React.PureComponent<Props, any> {
     render(): JSX.Element;
 }
 declare const GlobalStyle: import("styled-components").GlobalStyleComponent<{}, import("styled-components").DefaultTheme>;
-export { GlobalStyle as StyledTextInput };
+export { GlobalStyle as TextInputStyle };

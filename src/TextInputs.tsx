@@ -314,4 +314,4 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 
-export { GlobalStyle as StyledTextInput};
+export { GlobalStyle as TextInputStyle};
