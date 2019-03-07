@@ -239,13 +239,22 @@ const GlobalStyle = createGlobalStyle`
             cursor: text;
         }
 
-        input:not([type="date"]):not([type="datetime"]):not([placeholder=' ']) ~ label,
+        @supports (-ms-ime-align:auto) {
+            input ~ label {
+                font-size: .75rem;
+                top: .5rem;
+            }
+        }
+
+        input:not([type="date"]):not([type="datetime"]):not([placeholder=' ']) ~ label {
+            font-size: .75rem;
+            top: .5rem;
+        }
         input:not(:placeholder-shown) ~ label {
             font-size: .75rem;
             top: .5rem;
         }
-
-        input:not(:-ms-input-placeholder):not([placeholder=' ']) ~ label,
+        input:not(:-ms-input-placeholder) ~ label,
         input:-ms-input-placeholder:not([placeholder=' ']) ~ label {
             font-size: .75rem;
             top: .5rem;
@@ -292,6 +301,11 @@ const GlobalStyle = createGlobalStyle`
     }
 
     input:required:not(:valid):not(:placeholder-shown):not(:focus) ~ .error-message:not(:empty) {
+        max-height: 5rem;
+        opacity: 1;
+        margin: .5rem 1rem;
+    }
+    input:required:not(:valid):not(:-ms-input-placeholder):not(:focus) ~ .error-message:not(:empty) {
         max-height: 5rem;
         opacity: 1;
         margin: .5rem 1rem;
