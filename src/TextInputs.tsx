@@ -282,6 +282,7 @@ const GlobalStyle = createGlobalStyle`
     /**
      * input validation styles
      */
+    input:not(:required):focus ~ label > i,
     input:required:valid ~ label > i {
         opacity: 1;
     }
