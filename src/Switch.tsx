@@ -8,6 +8,11 @@ export interface Props {
     className?: string;
 
     /**
+     * Optional defaultChecked property is to set the initial state of the switch. Default is false.
+     */
+    defaultChecked?: boolean;
+
+    /**
      * Mandatory id.
      */
     id: string;
@@ -36,7 +41,7 @@ export default class Switch extends PureComponent<Props, any> {
 
                 <div className={`fd-input-switch${this.props.className ? ` ${this.props.className}` : ''}`}>
                     <label className="switch-container">
-                        <input type="checkbox" name={this.props.name ? this.props.name : this.props.id} value={this.props.value ? this.props.value : '1'}/>
+                        <input type="checkbox" name={this.props.name ? this.props.name : this.props.id} value={this.props.value ? this.props.value : '1'} defaultChecked={this.props.defaultChecked}/>
                         <span className="switch"/>
                         <span className="switch-label">{this.props.label}</span>
                     </label>

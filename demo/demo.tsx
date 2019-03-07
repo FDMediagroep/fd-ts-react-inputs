@@ -37,7 +37,9 @@ const StyledInputNoCheckMark = styled(StyledInputMarginRight)`
 ReactDOM.render(<section>
         <style>{GlobalStyles}</style>
 
-        <div><Switch id="switch" label="Do you want to toggle this?"/></div>
+        <div><Switch id="switch1" label="Do you want to toggle this?"/></div>
+
+        <div><Switch id="switch2" label="This switch is turned on by default?" defaultChecked={true}/></div>
 
         <div><Checkbox id="checkbox" label="Check this out"/></div>
 

@@ -5,6 +5,10 @@ export interface Props {
      */
     className?: string;
     /**
+     * Optional defaultChecked property is to set the initial state of the switch. Default is false.
+     */
+    defaultChecked?: boolean;
+    /**
      * Mandatory id.
      */
     id: string;
