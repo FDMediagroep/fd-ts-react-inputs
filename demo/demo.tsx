@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {TextInputs, Patterns, Switch, Checkbox, Radio } from "../src/fd-inputs";
 import styled, { css } from 'styled-components';
-import 'date-input-polyfill';
 
 const GlobalStyles = css`
     body {

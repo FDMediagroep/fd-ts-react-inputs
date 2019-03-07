@@ -1,4 +1,5 @@
 import React from 'react';
+import 'date-input-polyfill';
 export interface Props {
     /**
      * Mandatory id of the input element.
