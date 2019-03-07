@@ -67,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
         margin-right: .5rem;
         margin-bottom: .5rem;
         cursor: pointer;
-        :before {
+        &:before {
             content: '';
             position: absolute;
             box-sizing: border-box;
@@ -80,7 +80,7 @@ const GlobalStyle = createGlobalStyle`
             border-radius: .5rem;
             background-color: #f3f3f3;
         }
-        :after {
+        &:after {
             content: '';
             position: absolute;
             transition: all .3s ease-out;
@@ -96,11 +96,11 @@ const GlobalStyle = createGlobalStyle`
     }
 
     input:checked ~ .switch {
-        :before {
+        &:before {
             background-color: rgba(225, 132, 43, 0.5);
             border-radius: .5rem;
         }
-        :after {
+        &:after {
             left: calc(100% - 1.5rem);
             background-color: #E1842B;
         }
