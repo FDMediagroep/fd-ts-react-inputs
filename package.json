@@ -22,7 +22,7 @@
     "copy-img": "cpx -p -v \"img/**/*\" \"dist/\"",
     "lint": "tslint -p .",
     "release": "npm update && npm i && npm run test && npm run lint && npm run build-prod",
-    "test": "jest --debug",
+    "test": "jest --debug --runInBand",
     "tsc": "tsc -d",
     "updateSnapshot": "npm run test -- --updateSnapshot",
     "watch": "npm run build-prod -- --watch",
