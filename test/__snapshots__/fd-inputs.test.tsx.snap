@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FD Input should render correctly 1`] = `
-<TextInputs
+<TextInput
   id="input"
   localStorage={true}
 >
@@ -42,11 +42,11 @@ exports[`FD Input should render correctly 1`] = `
       />
     </div>
   </div>
-</TextInputs>
+</TextInput>
 `;
 
 exports[`FD Input should render with label correctly 1`] = `
-<TextInputs
+<TextInput
   id="input"
   label="this is the label"
   value="test value"
@@ -88,11 +88,11 @@ exports[`FD Input should render with label correctly 1`] = `
       />
     </div>
   </div>
-</TextInputs>
+</TextInput>
 `;
 
 exports[`FD Input should render with title correctly 1`] = `
-<TextInputs
+<TextInput
   id="input"
   label="this is the label"
   title="this is the title"
@@ -135,11 +135,11 @@ exports[`FD Input should render with title correctly 1`] = `
       />
     </div>
   </div>
-</TextInputs>
+</TextInput>
 `;
 
 exports[`FD Input should render with value correctly 1`] = `
-<TextInputs
+<TextInput
   id="input"
   value="test value"
 >
@@ -180,5 +180,5 @@ exports[`FD Input should render with value correctly 1`] = `
       />
     </div>
   </div>
-</TextInputs>
+</TextInput>
 `;

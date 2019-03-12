@@ -98,7 +98,7 @@ export enum Patterns {
     EMAIL = ".+@.+\\.[a-z]{2,3}"
 }
 
-export default class TextInputs extends React.PureComponent<Props, any> {
+export default class TextInput extends React.PureComponent<Props, any> {
     state: any = {
         errorMessage: this.props.errorMessage || 'Voer een geldige waarde in',
         maxLength: this.props.maxLength || null,
@@ -294,6 +294,12 @@ const GlobalStyle = createGlobalStyle`
      */
     input:not(:required):focus ~ label > i,
     input:required:valid ~ label > i {
+        opacity: 1;
+    }
+    input:not(:required):not(:placeholder-shown):valid ~ label > i {
+        opacity: 1;
+    }
+    input:not(:required):not(:-ms-input-placeholder):valid ~ label > i {
         opacity: 1;
     }
 

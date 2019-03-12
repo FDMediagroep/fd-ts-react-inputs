@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {TextInputs, Patterns, Switch, Checkbox, Radio } from "../src/fd-inputs";
+import {TextInput, Patterns, Switch, Checkbox, Radio, TextArea } from "../src/fd-inputs";
 import styled, { css } from 'styled-components';
 
 const GlobalStyles = css`
@@ -16,9 +16,12 @@ const GlobalStyles = css`
         font-size: 12px;
         font-family: 'ProximaNovaRegular', sans-serif;
     }
+    .fd-textarea {
+        width: 100%;
+    }
 `;
 
-const StyledInputMarginRight = styled(TextInputs)`
+const StyledInputMarginRight = styled(TextInput)`
     margin-right: 1rem;
 `;
 
@@ -51,9 +54,9 @@ ReactDOM.render(<section>
         </div>
 
         <div>
-            <TextInputs id="email1" type="email" label="E-mailadres" required={true} pattern={Patterns.EMAIL} errorMessage="Enter correct e-mail address"/>
+            <TextInput id="email1" type="email" label="E-mailadres" required={true} pattern={Patterns.EMAIL} errorMessage="Enter correct e-mail address"/>
         </div>
-        <div><TextInputs id="default" required={true}/></div>
+        <div><TextInput id="default" required={true}/></div>
         <div>
             <StyledInputMarginRight id="default2" description="Not mandatory" />
         </div>
@@ -61,11 +64,11 @@ ReactDOM.render(<section>
             <StyledInputNoCheckMark id="default3" description="Not mandatory and no check icon"/>
         </div>
         <div>
-            <TextInputs id="default4" placeholder="Enter a value" description="With placeholder text" required={true}/>
+            <TextInput id="default4" placeholder="Enter a value" description="With placeholder text" required={true}/>
         </div>
-        <div><TextInputs id="date1" type="date" label="Date" required={true} description="Mandatory field" errorMessage="Please pick a date"/></div>
-        <div><TextInputs id="date2" type="date" label="Date" description="Not mandatory"/></div>
-        <div><TextInputs id="mobile1" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)"/></div>
+        <div><TextInput id="date1" type="date" label="Date" required={true} description="Mandatory field" errorMessage="Please pick a date"/></div>
+        <div><TextInput id="date2" type="date" label="Date" description="Not mandatory"/></div>
+        <div><TextInput id="mobile1" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)"/></div>
         <div>
             <StyledInput id="mobile2" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)" description="This field is wide"/>
         </div>
@@ -75,6 +78,11 @@ ReactDOM.render(<section>
         <div>
             <StyledInputMarginRight id="mobile4" value="0612345678" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)" description="This input has a default value"/>
         </div>
+        <div><TextArea id="textarea1" label="A text area" required={true}/></div>
+        <div><TextArea id="textarea2" label="Another text area" description="Not mandatory textarea"/></div>
+        <div><TextArea id="textarea3" label="A text area" placeholder="This is the placeholder text" required={true}/></div>
+        <div><TextArea id="textarea4" label="A text area" value="This is the default value" description="Not mandatory textarea"/></div>
+        <div><TextArea id="textarea5" label="A text area" value="This is the default value which is also required" required={true}/></div>
         <div><button type="submit">Submit</button></div>
     </section>,
     document.getElementById('root'));

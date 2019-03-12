@@ -1,9 +1,11 @@
-import TextInputs, { TextInputStyle, Patterns } from "./TextInputs";
+import TextInput, { TextInputStyle, Patterns } from "./TextInput";
 import Switch, { SwitchStyle } from "./Switch";
 import Checkbox, { CheckboxStyle } from "./Checkbox";
 import Radio, { RadioStyle } from "./Radio";
+import TextArea, { TextAreaStyle } from "./TextArea";
 
-export {TextInputs, TextInputStyle, Patterns};
+export {TextInput, TextInputStyle, Patterns};
 export {Switch, SwitchStyle};
 export {Checkbox, CheckboxStyle};
 export {Radio, RadioStyle};
+export {TextArea, TextAreaStyle};
