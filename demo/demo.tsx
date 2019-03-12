@@ -80,10 +80,11 @@ ReactDOM.render(<section>
             <StyledInputMarginRight id="mobile4" value="0612345678" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)" description="This input has a default value"/>
         </div>
         <div><TextArea id="textarea1" label="A text area" required={true}/></div>
-        <div><TextArea id="textarea2" label="Another text area" description="Not mandatory textarea"/></div>
+        <div><TextArea id="textarea2" label="A text area" description="Optional text area"/></div>
         <div><TextArea id="textarea3" label="A text area" placeholder="This is the placeholder text" required={true}/></div>
-        <div><TextArea id="textarea4" label="A text area" value="This is the default value" description="Not mandatory textarea"/></div>
-        <div><TextArea id="textarea5" label="A text area" value="This is the default value which is also required" required={true}/></div>
+        <div><TextArea id="textarea4" label="A text area" placeholder="This is the placeholder text" description="optional text area"/></div>
+        <div><TextArea id="textarea5" label="A text area" value="This is the default value" description="Optional text area"/></div>
+        <div><TextArea id="textarea6" label="A text area" value="This is the default value which is also required" required={true}/></div>
         <div><button type="submit">Submit</button></div>
     </section>,
     document.getElementById('root'));

@@ -293,7 +293,8 @@ const GlobalStyle = createGlobalStyle`
      * input validation styles
      */
     input:not(:required):focus ~ label > i,
-    input:required:valid ~ label > i {
+    input:required:valid ~ label > i,
+    textarea:not(:required):valid:not([placeholder=' ']) ~ label > i {
         opacity: 1;
     }
     input:not(:required):not(:placeholder-shown):valid ~ label > i {
