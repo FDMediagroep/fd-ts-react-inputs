@@ -67,6 +67,9 @@ ReactDOM.render(<section>
         <div>
             <TextInput id="default4" placeholder="Enter a value" description="With placeholder text" required={true}/>
         </div>
+        <div>
+            <TextInput id="default5" placeholder="Enter a value" description="Optional with placeholder"/>
+        </div>
         <div><TextInput id="date1" type="date" label="Date" required={true} description="Mandatory field" errorMessage="Please pick a date"/></div>
         <div><TextInput id="date2" type="date" label="Date" description="Not mandatory"/></div>
         <div><TextInput id="mobile1" type="tel" label="Mobile" minLength={10} maxLength={10} required={true} pattern={Patterns.MOBILE} errorMessage="Enter valid mobile number (NL)"/></div>
