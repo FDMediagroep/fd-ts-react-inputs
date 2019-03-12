@@ -27,6 +27,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
     externals: {
+        'date-input-polyfill': 'date-input-polyfill',
         'react': 'react',
         'react-dom': 'react-dom',
         'styled-components': 'styled-components'
