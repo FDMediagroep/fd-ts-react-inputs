@@ -117,6 +117,12 @@ export default class TextInput extends React.PureComponent<Props, any> {
         }
     }
 
+    componentDidUpdate(prevProps: Props) {
+        if (prevProps.value !== this.props.value && this.state.value !== this.props.value) {
+            this.setState({value: this.props.value});
+        }
+    }
+
     checkValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         if (value) {

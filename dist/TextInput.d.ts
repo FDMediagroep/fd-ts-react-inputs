@@ -78,6 +78,7 @@ export declare enum Patterns {
 export default class TextInput extends React.PureComponent<Props, any> {
     state: any;
     componentDidMount(): void;
+    componentDidUpdate(prevProps: Props): void;
     checkValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
     store: (value: string) => void;
     handleInvalid: (event: React.FormEvent<Element>) => void;
