@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 export interface Props {
     defaultChecked?: boolean;
@@ -41,7 +41,7 @@ export default class Radio extends PureComponent<Props, any> {
     }
 }
 
-const GlobalStyle = createGlobalStyle`
+const styles = css`
 .fd-input-radio {
     line-height: 1.5;
     color: #191919;
@@ -112,4 +112,6 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 
-export {GlobalStyle as RadioStyle};
+const GlobalStyle = createGlobalStyle`${styles}`;
+
+export { styles as RadioStyle };

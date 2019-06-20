@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 export interface Props {
     /**
@@ -51,7 +51,7 @@ export default class Switch extends PureComponent<Props, any> {
     }
 }
 
-const GlobalStyle = createGlobalStyle`
+const styles = css`
 .fd-input-switch {
     input {
         opacity: 0;
@@ -118,4 +118,6 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 
-export {GlobalStyle as SwitchStyle};
+const GlobalStyle = createGlobalStyle`${styles}`;
+
+export {styles as SwitchStyle};

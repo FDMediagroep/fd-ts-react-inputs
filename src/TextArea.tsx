@@ -1,5 +1,5 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 declare var localStorage: any;
 
@@ -158,7 +158,7 @@ export default class TextArea extends React.PureComponent<Props, any> {
     }
 }
 
-const GlobalStyle = createGlobalStyle`
+const styles = css`
 .fd-textarea {
     display: inline-block;
 
@@ -298,4 +298,6 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 
-export { GlobalStyle as TextAreaStyle};
+const GlobalStyle = createGlobalStyle`${styles}`;
+
+export { styles as TextAreaStyle};

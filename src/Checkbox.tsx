@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 export interface Props {
     defaultChecked?: boolean;
@@ -40,7 +40,7 @@ export default class Checkbox extends PureComponent<Props, any> {
     }
 }
 
-const GlobalStyle = createGlobalStyle`
+const styles = css`
 .fd-checkbox {
     input {
         opacity: 0;
@@ -96,4 +96,6 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 
-export {GlobalStyle as CheckboxStyle};
+const GlobalStyle = createGlobalStyle`${styles}`;
+
+export {styles as CheckboxStyle};

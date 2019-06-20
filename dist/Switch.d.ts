@@ -28,5 +28,5 @@ export interface Props {
 export default class Switch extends PureComponent<Props, any> {
     render(): JSX.Element;
 }
-declare const GlobalStyle: import("styled-components").GlobalStyleComponent<{}, import("styled-components").DefaultTheme>;
-export { GlobalStyle as SwitchStyle };
+declare const styles: import("styled-components").FlattenSimpleInterpolation;
+export { styles as SwitchStyle };

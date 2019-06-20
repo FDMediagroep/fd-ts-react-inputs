@@ -22,5 +22,5 @@ export interface Props {
 export default class Radio extends PureComponent<Props, any> {
     render(): JSX.Element;
 }
-declare const GlobalStyle: import("styled-components").GlobalStyleComponent<{}, import("styled-components").DefaultTheme>;
-export { GlobalStyle as RadioStyle };
+declare const styles: import("styled-components").FlattenSimpleInterpolation;
+export { styles as RadioStyle };

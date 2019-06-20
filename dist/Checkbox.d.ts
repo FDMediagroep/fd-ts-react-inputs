@@ -21,5 +21,5 @@ export interface Props {
 export default class Checkbox extends PureComponent<Props, any> {
     render(): JSX.Element;
 }
-declare const GlobalStyle: import("styled-components").GlobalStyleComponent<{}, import("styled-components").DefaultTheme>;
-export { GlobalStyle as CheckboxStyle };
+declare const styles: import("styled-components").FlattenSimpleInterpolation;
+export { styles as CheckboxStyle };

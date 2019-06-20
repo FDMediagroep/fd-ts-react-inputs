@@ -69,5 +69,5 @@ export default class TextArea extends React.PureComponent<Props, any> {
     handleInvalid: (event: React.FormEvent<Element>) => void;
     render(): JSX.Element;
 }
-declare const GlobalStyle: import("styled-components").GlobalStyleComponent<{}, import("styled-components").DefaultTheme>;
-export { GlobalStyle as TextAreaStyle };
+declare const styles: import("styled-components").FlattenSimpleInterpolation;
+export { styles as TextAreaStyle };
