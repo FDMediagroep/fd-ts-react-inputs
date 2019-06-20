@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import { createGlobalStyle, css } from "styled-components";
 
 export interface Props {
@@ -33,22 +33,19 @@ export interface Props {
     value?: string;
 }
 
-export default class Switch extends PureComponent<Props, any> {
-    render() {
-        return (
-            <>
-                <GlobalStyle/>
-
-                <div className={`fd-input-switch${this.props.className ? ` ${this.props.className}` : ''}`}>
-                    <label className="switch-container">
-                        <input type="checkbox" name={this.props.name ? this.props.name : this.props.id} value={this.props.value ? this.props.value : '1'} defaultChecked={this.props.defaultChecked}/>
-                        <span className="switch"/>
-                        <span className="switch-label">{this.props.label}</span>
-                    </label>
-                </div>
-            </>
-        );
-    }
+export default function Switch(props: Props) {
+    return (
+        <>
+            <GlobalStyle/>
+            <div className={`fd-input-switch${props.className ? ` ${props.className}` : ''}`}>
+                <label className="switch-container">
+                    <input type="checkbox" className="switch-input" name={props.name ? props.name : props.id} value={props.value ? props.value : '1'} defaultChecked={props.defaultChecked}/>
+                    <span className="switch"/>
+                    <span className="switch-label">{props.label}</span>
+                </label>
+            </div>
+        </>
+    );
 }
 
 const styles = css`

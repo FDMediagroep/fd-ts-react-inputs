@@ -1,4 +1,3 @@
-import { PureComponent } from "react";
 export interface Props {
     /**
      * Optional class name(s). Space delimited.
@@ -25,8 +24,6 @@ export interface Props {
      */
     value?: string;
 }
-export default class Switch extends PureComponent<Props, any> {
-    render(): JSX.Element;
-}
+export default function Switch(props: Props): JSX.Element;
 declare const styles: import("styled-components").FlattenSimpleInterpolation;
 export { styles as SwitchStyle };

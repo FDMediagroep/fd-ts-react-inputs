@@ -1,4 +1,3 @@
-import { PureComponent } from "react";
 export interface Props {
     defaultChecked?: boolean;
     /**
@@ -19,8 +18,6 @@ export interface Props {
      */
     value?: string;
 }
-export default class Radio extends PureComponent<Props, any> {
-    render(): JSX.Element;
-}
+export default function Radio(props: Props): JSX.Element;
 declare const styles: import("styled-components").FlattenSimpleInterpolation;
 export { styles as RadioStyle };

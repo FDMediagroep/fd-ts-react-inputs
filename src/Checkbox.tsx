@@ -25,19 +25,17 @@ export interface Props {
     value?: string;
 }
 
-export default class Checkbox extends PureComponent<Props, any> {
-    render() {
-        return (
-            <>
-                <GlobalStyle/>
+export default function Checkbox(props: Props) {
+    return (
+        <>
+            <GlobalStyle/>
 
-                <label className="fd-checkbox">
-                    <input id={this.props.id} type="checkbox" name={this.props.name ? this.props.name : this.props.id} value={this.props.value} defaultChecked={this.props.defaultChecked}/>
-                    <span className="checkbox">{this.props.label}</span>
-                </label>
-            </>
-        );
-    }
+            <label className="fd-checkbox">
+                <input id={props.id} type="checkbox" name={props.name ? props.name : props.id} value={props.value} defaultChecked={props.defaultChecked}/>
+                <span className="checkbox">{props.label}</span>
+            </label>
+        </>
+    );
 }
 
 const styles = css`

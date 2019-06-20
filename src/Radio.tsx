@@ -26,19 +26,16 @@ export interface Props {
     value?: string;
 }
 
-export default class Radio extends PureComponent<Props, any> {
-    render() {
-        return (
-            <>
-                <GlobalStyle/>
-
-                <label className="fd-input-radio">
-                    <input id={this.props.id} type="radio" name={this.props.name ? this.props.name : this.props.id} value={this.props.value} defaultChecked={this.props.defaultChecked}/>
-                    <span className="radio">{this.props.label}</span>
-                </label>
-            </>
-        );
-    }
+export default function Radio(props: Props) {
+    return (
+        <>
+            <GlobalStyle/>
+            <label className="fd-input-radio">
+                <input id={props.id} type="radio" name={props.name ? props.name : props.id} value={props.value} defaultChecked={props.defaultChecked}/>
+                <span className="radio">{props.label}</span>
+            </label>
+        </>
+    );
 }
 
 const styles = css`
