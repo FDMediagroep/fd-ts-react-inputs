@@ -29,9 +29,15 @@ export interface Props {
 export default function Radio(props: Props) {
     return (
         <>
-            <GlobalStyle/>
+            <GlobalStyle />
             <label className="fd-input-radio">
-                <input id={props.id} type="radio" name={props.name ? props.name : props.id} value={props.value} defaultChecked={props.defaultChecked}/>
+                <input
+                    id={props.id}
+                    type="radio"
+                    name={props.name ? props.name : props.id}
+                    value={props.value}
+                    defaultChecked={props.defaultChecked}
+                />
                 <span className="radio">{props.label}</span>
             </label>
         </>
@@ -39,74 +45,73 @@ export default function Radio(props: Props) {
 }
 
 const styles = css`
-.fd-input-radio {
-    line-height: 1.5;
-    color: #191919;
-    input {
-        opacity: 0;
-        position: absolute;
-    }
-    .radio {
-        user-select: none;
-        position: relative;
-        z-index: 1;
-        display: inline-block;
-        padding-left: 1.5rem;
-        margin-right: 1rem;
-        margin-bottom: .5rem;
-        cursor: pointer;
-        color: #191919;
-        font-size: 1rem;
+    .fd-input-radio {
         line-height: 1.5;
-        font-family: 'ProximaNovaRegular', sans-serif;
-        border-radius: 50%;
-        &:before {
-            content: '';
-            position: absolute;
-            box-sizing: border-box;
-            left: 0;
-            top: .25rem;
-            width: 1rem;
-            height: 1rem;
-            border: .0625rem solid #ccbeb3;
-            transition: border-color .3s;
-            background-color: #fff;
-            border-radius: 50%;
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            left: .1875rem;
-            top: .5rem;
-            width: .5rem;
-            height: .2rem;
-            border-left: .125rem solid #fff;
-            border-bottom: .125rem solid #fff;
+        color: #191919;
+        input {
             opacity: 0;
-            transition: all .3s;
-            transform: rotate(-45deg);
-            border-radius: 50%;
+            position: absolute;
         }
-    }
+        .radio {
+            user-select: none;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding-left: 1.5rem;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            color: #191919;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-family: "ProximaNovaRegular", sans-serif;
+            &:before {
+                content: "";
+                position: absolute;
+                box-sizing: border-box;
+                left: 0;
+                top: 0.25rem;
+                width: 1rem;
+                height: 1rem;
+                border: 0.0625rem solid #ccbeb3;
+                transition: border-color 0.3s;
+                background-color: #fff;
+                border-radius: 50%;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0.1875rem;
+                top: 0.5rem;
+                width: 0.5rem;
+                height: 0.2rem;
+                border-left: 0.125rem solid #fff;
+                border-bottom: 0.125rem solid #fff;
+                opacity: 0;
+                transition: all 0.3s;
+                transform: rotate(-45deg);
+                border-radius: 50%;
+            }
+        }
 
-    input:focus ~ .radio {
-        &:before {
-            border-color: #49a3a1;
+        input:focus ~ .radio {
+            &:before {
+                border-color: #49a3a1;
+            }
         }
-    }
 
-    input:checked ~ .radio {
-        &:after {
-            opacity: 1;
-            background-color: #E1842B;
-            border: none;
-            width: .75rem;
-            height: .75rem;
-            left: .125rem;
-            top: .375rem;
+        input:checked ~ .radio {
+            &:after {
+                opacity: 1;
+                background-color: #e1842b;
+                border: none;
+                width: 0.75rem;
+                height: 0.75rem;
+                left: 0.125rem;
+                top: 0.375rem;
+            }
         }
     }
-}
 `;
 
 const GlobalStyle = createGlobalStyle`${styles}`;
