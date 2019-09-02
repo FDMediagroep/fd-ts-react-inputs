@@ -1,54 +1,56 @@
 language: node_js
 node_js:
-- 11.10.1
+    - 11.10.1
 python:
-  - "3.6"
+    - "3.6"
 cache:
-  - pip
+    - pip
 addons:
-  apt:
-    packages:
-    - nodejs-legacy
+    apt:
+        packages:
+            - nodejs-legacy
 branches:
-  only:
-  - master
-  - /^greenkeeper/.*$/
+    only:
+        - master
+        - /^greenkeeper/.*$/
 stages:
-  - test
+    - test
 before_install:
-  - pip install --user awscli
-  - export PATH=$PATH:$HOME/.local/bin
+    - pip install --user awscli
+    - export PATH=$PATH:$HOME/.local/bin
 install:
-  - npm install
+    - npm install
 jobs:
-  include:
-    - stage: test
-      name: "Build demo"
-      script: npm run build-demo
-    - stage: test
-      name: "Unit test"
-      script: npm test
+    include:
+        - stage: test
+          name: "Build demo"
+          script: npm run build-demo
+        - stage: test
+          name: "Unit test"
+          script: npm test
 after_success:
-- cat ./dist/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+    - cat ./dist/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 deploy:
-  - provider: npm
-    email: willem_liu@hotmail.com
-    on:
-      branch: master
-    api_key:
-      secure: V1g4DxlOu0vMaq5VbKG+jO8N2fxCROOlynuMGQ8rbtiNrR9X8MFHLK9UqbGsACMZ+MuQxw+l4bsS8WVq/J3Fjq+FeEtzCfit4nbF2WNCSi0Tm22zgE4wX57t89g7swLGIZkmRe1L8bZWUEx8fW1VpESE+dhR1bIxwkSOqQTJJnaPDBB8iC1o2AzOVVHaLtH0EGfD6Qo4reCgLFCQRw3HQXl32BD+Ic+bqX30JZlKuZVW+nNqB4HXGNlO26vlixm43g/vEaJhibFU68FPxYS3CTdDPHMVHtN36TJ1IG3DxxeiinzBnNHbp3lpFLp0KxoJRgWxWM3Ardno9YtDtO9RC2yFpiBU1adS31vVs+BEovLolRTgyjLSJHQRBEdpqCdp+g2tJhof5FAEm07hEF6PKfeX3XE5fHfHS+qqRqGDpwRfUjX13CfUZWym8sKQRQqc+s/4wmp4mGKSJnAsQ3TidRi8m/6SmusXw73piGm8GQZQSPIb7hU50z5nOqJqPwd3Y0Yy4oZ97G8pKK5PeqQ7phjFAC4effvBwLZCn8qZaV5BYykMcgSwNEogIGh1411K54ZyDEh3N2ooJWxGPEARnEx3luBRiirBvuKy0sAJ73ddGBrmF5MSbzscCI9N2Zq2Aga6IEehXdqlO0IxQQcA9Gx4SJcd8BETSOWemVMUUeQ=
-  - provider: s3
-    region: eu-west-1
-    bucket: static.fd.nl
-    skip_cleanup: true
-    acl: public_read
-    local_dir: dist
-    upload_dir: react/inputs
-    on:
-      branch: master
-    access_key_id:
-      secure: NqGZoUEFBMDKh2/R4mEWjetuQxvvqBEw76ipj3HuQf/vhc6uJTbGU75QsqXVfJJOFZkLEig1/cIXYgFFXwkj2cUQaKDy6Sro3OO8wUCJEVjopiD54B2m4qKvTR9auOFzJJ0fZprRmmvvdImo/OYu43QT5Jlxf66OXV83BZ7rj207R716aY8YW0SjsNJ7h0HUsQpwz2Iokx7kc7ANCpMC7YlxAAHPMRlz5fwPSFIs0+VDWXpv9nVgbiRAw/gyv5dGfcWLWegjv/bn2G9ySjEXWb0j7eRR96DVFf1HRs/jk+fNekFtRn55n5Go8GqA8kyG+kM5VERVsrtcnw+F1G84LCZv1YB+n/Ws/cJSRlLpnAvsFu2mh7Jkt6UqC5ewwRoiNf1NcU2ml106LSqpeU535VfEWZY2fi6QkVcmQr3C7X9fznK7Wt0P2hoKdM8PobNPrwwtcj2/Pncni48JyL2Wse1wp2hkceohwzxurTGgf3NuWP8EYEGPlEY9lwEoaPsNiwaPyvkHyoAgaL0kNyt4XyxzVJjeQq9+8a7vjqKEo+ImEiXXr6+iOlKxgbuHJAzrHZKRb03+PU/JsoKHGTY9438xMf9pcr3FC93EsgvtlE5HBRa+z1qVMETrYUYs4G6hVq3ieRo9M4Wi3khBwCVZxU2S7lA2NLxXN1D8JuV/hBg=
-    secret_access_key:
-      secure: 22vw8fJ+m5k+ioefPc0sLoMuejBC+oPo6XKea/5BrNfogVFhDc3VuhZl6pJas53FMP6jDQ2St41w8gcLML3nPolO2trFvatzXoDagC8r8LcvXadu1DkVJhpgfp62C1O/oFAnpTVCqc+/uyVoI0k5V9x/CJUskyDeGzvjLMEpO/NV9t+91cl0f5inWAAWZrpM2F2pZ0LzIF3KYOCXrE55zta+xtkuP4EtkmHRMy8zYVRAX4WJWLNWewN0tIdQw1LbKPUG5MBkEn1WWDNWm/HjJdEuP6+KaEscurHisA6VqDmBDqyzCr14l0q7Hj/nwIuP5td2+68KOU6V4o48zYYPAi+OKs8ZMDQd/fZxFmLuiphYvWvfpOFsO4gX1DjaMcC2E11k03bvMkRR1+hA0lBOFgDtYj3p5lzLmN9X2+l2mbhC7fMqby7GVKOaM/Z0zSxy6RBxObxXqe0UYzyo7kqw23HKEAk2PBkTXCVEw/Bs/GU+ZsxAUVdQqALgSQdiNKXnq4O9QrEYpHZGHquBv32usn1WUfNVtAbNNRYMKacmIf3N8zoqTU/rLCOAaF7DI6nbyl6kx5Tj4x5GaQmY9hiZzOmZMcxGSYuNX/Pt1Ue1Ho9y+8n7x0Tj4hQR6KCFX9aFGglDVhgUSaP9phuJjoeVkM2foce/4dwlmKJv3GOxhF0=
+    - provider: npm
+      email: willem_liu@hotmail.com
+      on:
+          branch: master
+      api_key:
+          secure: V1g4DxlOu0vMaq5VbKG+jO8N2fxCROOlynuMGQ8rbtiNrR9X8MFHLK9UqbGsACMZ+MuQxw+l4bsS8WVq/J3Fjq+FeEtzCfit4nbF2WNCSi0Tm22zgE4wX57t89g7swLGIZkmRe1L8bZWUEx8fW1VpESE+dhR1bIxwkSOqQTJJnaPDBB8iC1o2AzOVVHaLtH0EGfD6Qo4reCgLFCQRw3HQXl32BD+Ic+bqX30JZlKuZVW+nNqB4HXGNlO26vlixm43g/vEaJhibFU68FPxYS3CTdDPHMVHtN36TJ1IG3DxxeiinzBnNHbp3lpFLp0KxoJRgWxWM3Ardno9YtDtO9RC2yFpiBU1adS31vVs+BEovLolRTgyjLSJHQRBEdpqCdp+g2tJhof5FAEm07hEF6PKfeX3XE5fHfHS+qqRqGDpwRfUjX13CfUZWym8sKQRQqc+s/4wmp4mGKSJnAsQ3TidRi8m/6SmusXw73piGm8GQZQSPIb7hU50z5nOqJqPwd3Y0Yy4oZ97G8pKK5PeqQ7phjFAC4effvBwLZCn8qZaV5BYykMcgSwNEogIGh1411K54ZyDEh3N2ooJWxGPEARnEx3luBRiirBvuKy0sAJ73ddGBrmF5MSbzscCI9N2Zq2Aga6IEehXdqlO0IxQQcA9Gx4SJcd8BETSOWemVMUUeQ=
+    - provider: s3
+      region: eu-west-1
+      bucket: static.fd.nl
+      skip_cleanup: true
+      acl: public_read
+      local_dir: dist
+      upload_dir: react/inputs
+      on:
+          branch: master
+      access_key_id:
+          secure: NqGZoUEFBMDKh2/R4mEWjetuQxvvqBEw76ipj3HuQf/vhc6uJTbGU75QsqXVfJJOFZkLEig1/cIXYgFFXwkj2cUQaKDy6Sro3OO8wUCJEVjopiD54B2m4qKvTR9auOFzJJ0fZprRmmvvdImo/OYu43QT5Jlxf66OXV83BZ7rj207R716aY8YW0SjsNJ7h0HUsQpwz2Iokx7kc7ANCpMC7YlxAAHPMRlz5fwPSFIs0+VDWXpv9nVgbiRAw/gyv5dGfcWLWegjv/bn2G9ySjEXWb0j7eRR96DVFf1HRs/jk+fNekFtRn55n5Go8GqA8kyG+kM5VERVsrtcnw+F1G84LCZv1YB+n/Ws/cJSRlLpnAvsFu2mh7Jkt6UqC5ewwRoiNf1NcU2ml106LSqpeU535VfEWZY2fi6QkVcmQr3C7X9fznK7Wt0P2hoKdM8PobNPrwwtcj2/Pncni48JyL2Wse1wp2hkceohwzxurTGgf3NuWP8EYEGPlEY9lwEoaPsNiwaPyvkHyoAgaL0kNyt4XyxzVJjeQq9+8a7vjqKEo+ImEiXXr6+iOlKxgbuHJAzrHZKRb03+PU/JsoKHGTY9438xMf9pcr3FC93EsgvtlE5HBRa+z1qVMETrYUYs4G6hVq3ieRo9M4Wi3khBwCVZxU2S7lA2NLxXN1D8JuV/hBg=
+      secret_access_key:
+          secure: 22vw8fJ+m5k+ioefPc0sLoMuejBC+oPo6XKea/5BrNfogVFhDc3VuhZl6pJas53FMP6jDQ2St41w8gcLML3nPolO2trFvatzXoDagC8r8LcvXadu1DkVJhpgfp62C1O/oFAnpTVCqc+/uyVoI0k5V9x/CJUskyDeGzvjLMEpO/NV9t+91cl0f5inWAAWZrpM2F2pZ0LzIF3KYOCXrE55zta+xtkuP4EtkmHRMy8zYVRAX4WJWLNWewN0tIdQw1LbKPUG5MBkEn1WWDNWm/HjJdEuP6+KaEscurHisA6VqDmBDqyzCr14l0q7Hj/nwIuP5td2+68KOU6V4o48zYYPAi+OKs8ZMDQd/fZxFmLuiphYvWvfpOFsO4gX1DjaMcC2E11k03bvMkRR1+hA0lBOFgDtYj3p5lzLmN9X2+l2mbhC7fMqby7GVKOaM/Z0zSxy6RBxObxXqe0UYzyo7kqw23HKEAk2PBkTXCVEw/Bs/GU+ZsxAUVdQqALgSQdiNKXnq4O9QrEYpHZGHquBv32usn1WUfNVtAbNNRYMKacmIf3N8zoqTU/rLCOAaF7DI6nbyl6kx5Tj4x5GaQmY9hiZzOmZMcxGSYuNX/Pt1Ue1Ho9y+8n7x0Tj4hQR6KCFX9aFGglDVhgUSaP9phuJjoeVkM2foce/4dwlmKJv3GOxhF0=
+notifications:
+    webhooks: https://outlook.office.com/webhook/09d65d9c-ba4d-4ce4-8ff9-985e1ea578a1@8f2a0bdd-25fe-430a-adb5-0d2367dd50ee/TravisCI/308b447ae6eb4c3f9c7e153e97a4bd25/aaeb5e7b-fe7b-4d97-9adf-3089c10da2cc
 after_deploy:
-  - aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/react/inputs/*"
+    - aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/react/inputs/*"
