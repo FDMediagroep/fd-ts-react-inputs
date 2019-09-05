@@ -52,5 +52,6 @@ deploy:
           secure: 22vw8fJ+m5k+ioefPc0sLoMuejBC+oPo6XKea/5BrNfogVFhDc3VuhZl6pJas53FMP6jDQ2St41w8gcLML3nPolO2trFvatzXoDagC8r8LcvXadu1DkVJhpgfp62C1O/oFAnpTVCqc+/uyVoI0k5V9x/CJUskyDeGzvjLMEpO/NV9t+91cl0f5inWAAWZrpM2F2pZ0LzIF3KYOCXrE55zta+xtkuP4EtkmHRMy8zYVRAX4WJWLNWewN0tIdQw1LbKPUG5MBkEn1WWDNWm/HjJdEuP6+KaEscurHisA6VqDmBDqyzCr14l0q7Hj/nwIuP5td2+68KOU6V4o48zYYPAi+OKs8ZMDQd/fZxFmLuiphYvWvfpOFsO4gX1DjaMcC2E11k03bvMkRR1+hA0lBOFgDtYj3p5lzLmN9X2+l2mbhC7fMqby7GVKOaM/Z0zSxy6RBxObxXqe0UYzyo7kqw23HKEAk2PBkTXCVEw/Bs/GU+ZsxAUVdQqALgSQdiNKXnq4O9QrEYpHZGHquBv32usn1WUfNVtAbNNRYMKacmIf3N8zoqTU/rLCOAaF7DI6nbyl6kx5Tj4x5GaQmY9hiZzOmZMcxGSYuNX/Pt1Ue1Ho9y+8n7x0Tj4hQR6KCFX9aFGglDVhgUSaP9phuJjoeVkM2foce/4dwlmKJv3GOxhF0=
 notifications:
     webhooks: https://outlook.office.com/webhook/09d65d9c-ba4d-4ce4-8ff9-985e1ea578a1@8f2a0bdd-25fe-430a-adb5-0d2367dd50ee/TravisCI/308b447ae6eb4c3f9c7e153e97a4bd25/aaeb5e7b-fe7b-4d97-9adf-3089c10da2cc
+    on_success: change
 after_deploy:
     - aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/react/inputs/*"
