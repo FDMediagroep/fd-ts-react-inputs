@@ -68,7 +68,7 @@
         "date-input-polyfill": "^2.14.0",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
-        "styled-components": "^5.0.0-beta.6-ej4"
+        "styled-components": "^5.0.1"
     },
     "jest": {
         "transform": {
