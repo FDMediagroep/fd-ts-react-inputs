@@ -1,21 +1,28 @@
+> :exclamation: DEPRECATED:exclamation: : Superseded by @fdmg/design-system. See: https://github.com/FDMediagroep/fd-design-system
+
 [![Build Status](https://travis-ci.org/FDMediagroep/fd-ts-react-inputs.svg?branch=master)](https://travis-ci.org/FDMediagroep/fd-ts-react-inputs)
 [![Coverage Status](https://coveralls.io/repos/github/FDMediagroep/fd-ts-react-inputs/badge.svg?branch=master)](https://coveralls.io/github/FDMediagroep/fd-ts-react-inputs?branch=master)
 [![npm version](https://badge.fury.io/js/%40fdmg%2Ffd-inputs.svg)](https://badge.fury.io/js/%40fdmg%2Ffd-inputs)
 
-
 # fd-inputs
+
 FD-themed inputs
 
 # Installation
-* Run `npm i -D @fdmg/fd-inputs`
+
+-   Run `npm i -D @fdmg/fd-inputs`
 
 # Demo
+
 To run the demo, check-out this repository and run `npm run build-demo`.
 After the build succeeded you can open `dist/demo.html` with your webbrowser.
-* [Demo](http://static.fd.nl/react/inputs/demo.html)
+
+-   [Demo](http://static.fd.nl/react/inputs/demo.html)
 
 # Props
+
 When developing in TypeScript autocompletion and code documentation is shown in IDE's like Visual Studio Code.
+
 ```
 export interface Props {
     /**
@@ -97,6 +104,7 @@ export interface Props {
 ```
 
 # Usage
+
 ```
 import {TextInput} from '@fdmg/fd-inputs';
 ...
