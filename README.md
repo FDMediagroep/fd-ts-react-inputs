@@ -1,4 +1,4 @@
-> :exclamation: DEPRECATED:exclamation: : Superseded by @fdmg/design-system. See: https://github.com/FDMediagroep/fd-design-system
+> :exclamation: **DEPRECATED** :exclamation: : Superseded by @fdmg/design-system. See: https://github.com/FDMediagroep/fd-design-system
 
 [![Build Status](https://travis-ci.org/FDMediagroep/fd-ts-react-inputs.svg?branch=master)](https://travis-ci.org/FDMediagroep/fd-ts-react-inputs)
 [![Coverage Status](https://coveralls.io/repos/github/FDMediagroep/fd-ts-react-inputs/badge.svg?branch=master)](https://coveralls.io/github/FDMediagroep/fd-ts-react-inputs?branch=master)
